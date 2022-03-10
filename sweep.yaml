@@ -1,0 +1,27 @@
+program: script.py
+method: bayes
+metric:
+  name: loss
+  goal: minimize
+parameters:
+  dataset:
+    value: citeseer
+  num_epochs:
+    value: 200
+  learning_rate:
+    min: 0.0001
+    max: 0.01
+  weight_decay:
+    min: 0.0001
+    max: 0.01
+  dropout:
+    min: 0.2
+    max: 0.7
+  hidden_dim:
+    min: 10
+    max: 100
+early_terminate:
+  type: hyperband
+  s: 2
+  eta: 3
+  max_iter: 200
